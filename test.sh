@@ -5,7 +5,7 @@ echo "$data"
 
 echo
 echo Testing Silver Peak Auth
-curl -i -k -L -H "Content-Type: application/json" -X POST -d '{"user":"kentik","password":"Kronos@78"}' $baseURL/authentication/login
+curl -k -L -H "Content-Type: application/json" -X POST -d '{"user":"kentik","password":"Kronos@78"}' $baseURL/authentication/login
 
 sleep 2
 
