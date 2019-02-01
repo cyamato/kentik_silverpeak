@@ -1,5 +1,6 @@
 #!/bin/bash
 # echo
+baseURL='http://msp-us-orch.core.kronos.com/gms/rest'
 # data='{"user":"kentik","password":"Kronos@78"}'
 # echo "$data"
 # echo
@@ -12,4 +13,4 @@
 
 echo
 echo Testing Silvver Peak Login Status
-curl -i -k -L -X GET http://msp-us-orch.core.kronos.com/gms/rest/authentication/loginStatus
+curl -i -k -L -X GET $baseURL/authentication/loginStatus
