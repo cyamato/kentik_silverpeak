@@ -12,4 +12,4 @@
 
 echo
 echo Testing Silvver Peak Login Status
-curl -i -k -L -X GET http://msp-us-orch.core.kronos.com/rest/authentication/loginStatus
+curl -i -k -L -X GET http://msp-us-orch.core.kronos.com/authentication/loginStatus
