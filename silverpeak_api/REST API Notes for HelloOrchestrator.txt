@@ -1,0 +1,13 @@
+POST 
+https://192.168.1.22:443/gms/rest/authentication/login
+{"user": "admin", "password": "Silverpeak1"}
+200
+
+GET
+https://192.168.1.22:443/gms/rest/gmsserver/briefInfo
+Returns JSON containing "hostname"
+200
+
+GET 
+https://192.168.1.22:443/gms/rest/authentication/logout
+200
