@@ -1,6 +1,6 @@
 #!/bin/bash
 echo
-data='{"user":"Kentik","password":"Kronos@78"}'
+data='{"user":"kentik","password":"Kronos@78"}'
 echo "$data"
 echo
 echo Testing Silver Peak Auth
