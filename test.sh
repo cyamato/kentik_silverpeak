@@ -9,5 +9,5 @@ curl -k -L -H "Content-Type: application/json" -X POST -d '{"user":"kentik","pas
 sleep 5
 
 echo
-echo Testing Silvver Peak Login Status
-curl -k -L -X GET $baseURL/authentication/loginStatus
+echo Testing Silvver Peak Tunnel Status
+curl -k -L -X GET $baseURL/stats/aggregate/tunnel
