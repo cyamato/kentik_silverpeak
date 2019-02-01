@@ -7,8 +7,8 @@ echo "$data"
 
 echo
 echo Testing Silver Peak Auth
-echo $baseCurlCmd -X POST -d "$data" $baseURL/authentication/login
-$baseCurlCmd -d "$data" $baseURL/authentication/login
+echo $baseCurlCmd -X POST -d "${data[@]}" $baseURL/authentication/login
+$baseCurlCmd -d "${data[@]}" $baseURL/authentication/login
 
 # echo
 # echo Testing Silver Peak Auth Type
