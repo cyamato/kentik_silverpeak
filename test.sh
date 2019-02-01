@@ -1,12 +1,14 @@
 #!/bin/bash
 # echo
-baseURL='http://msp-us-orch.core.kronos.com/gms/rest'
+baseCurlCmd='curl -i -k -L -H "Content-Type: application/json"'
+baseURL='https://msp-us-orch.core.kronos.com:443/gms/rest'
 data='{"user":"kentik","password":"Kronos@78"}'
 echo "$data"
 
 echo
 echo Testing Silver Peak Auth
-curl -i -k -L -X POST -H "Content-Type: application/json" -d "$data" $baseURL/authentication/login
+echo $baseCurlCmd -X POST -d "$data" $baseURL/authentication/login
+$baseCurlCmd -d "$data" $baseURL/authentication/login
 
 # echo
 # echo Testing Silver Peak Auth Type
@@ -14,4 +16,4 @@ curl -i -k -L -X POST -H "Content-Type: application/json" -d "$data" $baseURL/au
 
 echo
 echo Testing Silvver Peak Login Status
-curl -i -k -L -X GET $baseURL/authentication/loginStatus
+$baseCurlCmd -X GET $baseURL/authentication/loginStatus
