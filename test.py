@@ -51,9 +51,10 @@ class Orch:
 orch = Orch()
 
 orch.login()
-orchRresponse = orch.get('/gms/overlays/config/7')
+#orchResponse = orch.get('/gms/overlays/config/7') #Get Overlays For ID 7
+orchResponse = orch.get('/gms/overlays/association')
 try:
-    print("\nValue:\n{0}\n".format(json.dumps(orchRresponse.json(), indent=4, sort_keys=True)))
+    print("\nValue:\n{0}\n".format(json.dumps(orchResponse.json(), indent=4, sort_keys=True)))
 except:
-    print("\nValue:\n{0}\n".format(orchRresponse.text))
+    print("\nValue:\n{0}\n".format(orchResponse.text))
 orch.logout()
