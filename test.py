@@ -3,7 +3,6 @@ import json
 
 class Orch:
     def __init__(self):
-        self.ipaddress = ipaddress
         self.url_prefix = "https://msp-us-orch.core.kronos.com:443/gms/rest"
         self.session = requests.Session()
         self.data = {}
