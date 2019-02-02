@@ -15,13 +15,13 @@ class Orch:
             response = self.post("/authentication/login", 
                                 {"user": self.user, "password": self.password})
             if response.status_code == 200:
-                print("{0}: Orchestrator login success".format(self.ipaddress))
+                print("Orchestrator login success")
                 return True
             else:
-                print("{0}: Orchestrator login failed: {1}".format(self.ipaddress, response.text))
+                print("Orchestrator login failed: {0}".format(response.text))
                 return False
         except:
-            print("{0}: Unable to connect to Orchestrator".format(self.ipaddress))
+            print("Unable to connect to Orchestrator")
             return False
 
     def logout(self):
