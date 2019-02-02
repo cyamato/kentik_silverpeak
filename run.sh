@@ -1,4 +1,4 @@
 #!/bin/bash
 
 git pull
-./test.sh
+python3 test.py
