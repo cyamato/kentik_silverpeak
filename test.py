@@ -6,7 +6,7 @@ class Orch:
         self.url_prefix = "https://msp-us-orch.core.kronos.com:443/gms/rest"
         self.session = requests.Session()
         self.data = {}
-        self.user = "Kentik"
+        self.user = "kentik"
         self.password = "Kronos@78" 
         
     def login(self):
