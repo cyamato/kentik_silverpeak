@@ -52,5 +52,5 @@ orch = Orch()
 
 orch.login()
 orchRresponse = orch.get
-print("Value:\n{0}".format(orchRresponse.json()))
+print("Value:\n{0}".format(orchRresponse.text))
 orch.logout()
