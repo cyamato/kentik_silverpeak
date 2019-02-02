@@ -48,10 +48,8 @@ class Orch:
         response = self.session.delete(self.url_prefix + url, timeout=120, verify=False)
         return response
     
-# Create an object
-orch = Orch(self.orchIP, self.orchUser, self.orchPassword)
+orch = Orch()
 
-# Login, get the "briefInfo", then logout
 orch.login()
 response = orch.get("/stats/aggregate/tunnel")
 orch.logout()
