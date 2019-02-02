@@ -55,5 +55,5 @@ orchRresponse = orch.get('/appliance/statsConfig')
 try:
     print("\nValue:\n{0}\n".format(orchRresponse.json()))
 except:
-    print("\nValue:\n{0}\n".format(orchRresponse.text)
+    print("\nValue:\n{0}\n".format(orchRresponse.text))
 orch.logout()
