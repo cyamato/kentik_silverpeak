@@ -27,7 +27,7 @@ class Orch:
     def logout(self):
         response = self.get("/authentication/logout")
         if response.status_code == 200:
-            print("Orchestrator logout success"
+            print("Orchestrator logout success")
             return True
         else:
             print("Orchestrator logout failed: {0}".format(response.text))
