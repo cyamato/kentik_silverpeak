@@ -53,7 +53,7 @@ orch = Orch()
 orch.login()
 orchRresponse = orch.get('/appliance/statsConfig')
 try:
-    print("\nValue:\n{0}\n".format(json.dumps(orchRresponse.text, indent=4, sort_keys=True)))
+    print("\nValue:\n{0}\n".format(json.dumps(orchRresponse.json(), indent=4, sort_keys=True)))
 except:
     print("\nValue:\n{0}\n".format(orchRresponse.text))
 orch.logout()
