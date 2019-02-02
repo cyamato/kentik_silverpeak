@@ -1,4 +1,5 @@
 import requests
+from requests.packages.urllib3.exceptions import InsecureRequestWarning
 import json
 
 class Orch:
@@ -26,24 +27,24 @@ class Orch:
     def logout(self):
         response = self.get("/authentication/logout")
         if response.status_code == 200:
-            print("{0}: Orchestrator logout success".format(self.ipaddress))
+            print("Orchestrator logout success"
             return True
         else:
-            print("{0}: Orchestrator logout failed: {1}".format(self.ipaddress, response.text))
+            print("Orchestrator logout failed: {0}".format(response.text))
             return False
         
     def post(self, url, data):
-        requests.packages.urllib3.disable_warnings()
+        requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
         response = self.session.post(self.url_prefix + url, json=data, timeout=120, verify=False)
         return response
 
     def get(self, url):
-        requests.packages.urllib3.disable_warnings()
+        requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
         response = self.session.get(self.url_prefix + url, timeout=120, verify=False)
         return response
 
     def delete(self, url):
-        requests.packages.urllib3.disable_warnings()
+        requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
         response = self.session.delete(self.url_prefix + url, timeout=120, verify=False)
         return response
     
