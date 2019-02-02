@@ -51,7 +51,7 @@ class Orch:
 orch = Orch()
 
 orch.login()
-orchRresponse = orch.get('/gms/overlays/config')
+orchRresponse = orch.get('/gms/overlays/config/7')
 try:
     print("\nValue:\n{0}\n".format(json.dumps(orchRresponse.json(), indent=4, sort_keys=True)))
 except:
