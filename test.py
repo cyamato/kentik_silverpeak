@@ -4,8 +4,7 @@ import json
 host = "https://msp-us-orch.core.kronos.com:443/gms/rest"
 session = requests.Session
 try:
-    response = session.post(host + "/authentication/login", 
-                        {"user": "Kentik", "password": "Kronos@78"})
+    response = session.post(host + "/authentication/login", json={"user": "Kentik", "password": "Kronos@78"}, timeout=120, verify=False)
     if response.status_code == 200:
         print("Orchestrator login success")
         requests.packages.urllib3.disable_warnings()
