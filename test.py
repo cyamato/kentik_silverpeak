@@ -51,7 +51,6 @@ class Orch:
 orch = Orch()
 
 orch.login()
-response = orch.get("/stats/aggregate/tunnel")
+orchRresponse = orch.get
+print("Value:\n{0}".format(orchRresponse.json()))
 orch.logout()
-
-print("4. Python value:\n{0}".format(response.json()))
