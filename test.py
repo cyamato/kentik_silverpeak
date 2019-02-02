@@ -49,7 +49,7 @@ class Orch:
         return response
     
 # Create an object
-orch = OrchMiniHelper(self.orchIP, self.orchUser, self.orchPassword)
+orch = Orch(self.orchIP, self.orchUser, self.orchPassword)
 
 # Login, get the "briefInfo", then logout
 orch.login()
