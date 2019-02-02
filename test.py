@@ -52,7 +52,7 @@ orch = Orch()
 
 orch.login()
 #orchResponse = orch.get('/gms/overlays/config/7') #Get Overlays For ID 7
-orchResponse = orch.get('/gms/overlays/association')
+orchResponse = orch.get('/tunnelsConfiguration/overlayInfo')
 try:
     print("\nValue:\n{0}\n".format(json.dumps(orchResponse.json(), indent=4, sort_keys=True)))
 except:
