@@ -51,6 +51,6 @@ class Orch:
 orch = Orch()
 
 orch.login()
-orchRresponse = orch.get('/stats/aggregate/tunnel')
+orchRresponse = orch.get('/appliance/statsConfig/default')
 print("Value:\n{0}".format(orchRresponse.text))
 orch.logout()
