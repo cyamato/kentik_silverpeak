@@ -2,7 +2,7 @@ import requests
 import json
 
 host = "https://msp-us-orch.core.kronos.com:443/gms/rest"
-session = requests.Session
+session = requests.Session()
 try:
     requests.packages.urllib3.disable_warnings()
     response = session.post(host + "/authentication/login", json={"user": "Kentik", "password": "Kronos@78"}, timeout=120, verify=False)
