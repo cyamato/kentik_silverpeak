@@ -78,7 +78,7 @@ tData = tData + "destTunnelAlias"
 tData = tData + "\n"
 requests.post('https://html-rx-server-cyamato.c9users.io/', data=tData)
 for node, nValue in r.items():
-    for tunnel, tValue in nValue.item():
+    for tunnel, tValue in nValue.items():
         tData = node + ','
         tData = tData + tunnel + ','
         try: 
