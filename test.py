@@ -54,54 +54,51 @@ orch.login()
 
 # #orchResponse = orch.get('/gms/overlays/config/7') #Get Overlays For ID 7
 # orchResponse = orch.get('/tunnelsConfiguration/overlayInfo')
-orchResponse = orch.get('/tunnels2/physical?limit=300')
+orchResponse = orch.get('/tunnels2/physical?limit=1')
 # orchResponse = orch.get('/tunnels2/physical/{nePk}/{tunnelId}')
 
-try:
-    # print("\nValue:\n{0}\n".format(json.dumps(orchResponse.json(), indent=4, sort_keys=True)))
-    r = orchResponse.json()
-    tData = "node" + ','
-    tData = tData + "tunnel" + ','
-    tData = tData + "id" + ','
-    tData = tData + "dhgroup" + ','
-    tData = tData + "tag" + ','
-    tData = tData + "alias" + ','
-    tData = tData + "sourceIpAddress" + ','
-    tData = tData + "destTunnelId" + ','
-    tData = tData + "udpDestinationPort" + ','
-    tData = tData + "dscp" + ','
-    tData = tData + "destNePk" + ','
-    tData = tData + "srcNePk" + ','
-    tData = tData + "operStatus" + ','
-    tData = tData + "adminStatus" + ','
-    tData = tData + "destIpAddress" + ','
-    tData = tData + "destTunnelAlias"
-    tData = tData + "\n"
-    requests.post('https://html-rx-server-cyamato.c9users.io/', data = tData)
-    for node, nValue in r.items():
-        for tunnel, tValue in nValue.item():
-            tData = node + ','
-            tData = tData + tunnel + ','
-            try: 
-                tData = tData + tValue["id"] + ','
-                tData = tData + tValue["dhgroup"] + ','
-                tData = tData + tValue["tag"] + ','
-                tData = tData + tValue["alias"] + ','
-                tData = tData + tValue["sourceIpAddress"] + ','
-                tData = tData + tValue["destTunnelId"] + ','
-                tData = tData + tValue["udpDestinationPort"] + ','
-                tData = tData + tValue["dscp"] + ','
-                tData = tData + tValue["destNePk"] + ','
-                tData = tData + tValue["srcNePk"] + ','
-                tData = tData + tValue["operStatus"] + ','
-                tData = tData + tValue["adminStatus"] + ','
-                tData = tData + tValue["destIpAddress"] + ','
-                tData = tData + tValue["destTunnelAlias"]
-            except:
-                print("Error")
-            tData = tData + "\n"
-            requests.post('https://html-rx-server-cyamato.c9users.io/', data = tData)
-except:
-    print("\nValue:\n{0}\n".format(orchResponse.text))
+# print("\nValue:\n{0}\n".format(json.dumps(orchResponse.json(), indent=4, sort_keys=True)))
+r = orchResponse.json()
+tData = "node" + ','
+tData = tData + "tunnel" + ','
+tData = tData + "id" + ','
+tData = tData + "dhgroup" + ','
+tData = tData + "tag" + ','
+tData = tData + "alias" + ','
+tData = tData + "sourceIpAddress" + ','
+tData = tData + "destTunnelId" + ','
+tData = tData + "udpDestinationPort" + ','
+tData = tData + "dscp" + ','
+tData = tData + "destNePk" + ','
+tData = tData + "srcNePk" + ','
+tData = tData + "operStatus" + ','
+tData = tData + "adminStatus" + ','
+tData = tData + "destIpAddress" + ','
+tData = tData + "destTunnelAlias"
+tData = tData + "\n"
+requests.post('https://html-rx-server-cyamato.c9users.io/', data=tData)
+for node, nValue in r.items():
+    for tunnel, tValue in nValue.item():
+        tData = node + ','
+        tData = tData + tunnel + ','
+        try: 
+            tData = tData + tValue["id"] + ','
+            tData = tData + tValue["dhgroup"] + ','
+            tData = tData + tValue["tag"] + ','
+            tData = tData + tValue["alias"] + ','
+            tData = tData + tValue["sourceIpAddress"] + ','
+            tData = tData + tValue["destTunnelId"] + ','
+            tData = tData + tValue["udpDestinationPort"] + ','
+            tData = tData + tValue["dscp"] + ','
+            tData = tData + tValue["destNePk"] + ','
+            tData = tData + tValue["srcNePk"] + ','
+            tData = tData + tValue["operStatus"] + ','
+            tData = tData + tValue["adminStatus"] + ','
+            tData = tData + tValue["destIpAddress"] + ','
+            tData = tData + tValue["destTunnelAlias"]
+        except:
+            print("Error")
+        tData = tData + "\n"
+        requests.post('https://html-rx-server-cyamato.c9users.io/', data=tData)
 
 orch.logout()
