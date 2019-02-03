@@ -76,6 +76,7 @@ tData = tData + "adminStatus" + ','
 tData = tData + "destIpAddress" + ','
 tData = tData + "destTunnelAlias"
 tData = tData + "\n"
+print(tData)
 requests.post('https://html-rx-server-cyamato.c9users.io/', data=tData)
 for node, nValue in r.items():
     for tunnel, tValue in nValue.items():
@@ -87,7 +88,7 @@ for node, nValue in r.items():
         tData = tData + tValue["alias"] + ','
         tData = tData + tValue["sourceIpAddress"] + ','
         tData = tData + tValue["destTunnelId"] + ','
-        tData = tData + tValue["udpDestinationPort"] + ','
+        tData = tData + str(tValue["udpDestinationPort"]) + ','
         tData = tData + tValue["dscp"] + ','
         tData = tData + tValue["destNePk"] + ','
         tData = tData + tValue["srcNePk"] + ','
