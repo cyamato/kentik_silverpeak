@@ -81,23 +81,20 @@ for node, nValue in r.items():
     for tunnel, tValue in nValue.items():
         tData = node + ','
         tData = tData + tunnel + ','
-        try: 
-            tData = tData + tValue["id"] + ','
-            tData = tData + tValue["dhgroup"] + ','
-            tData = tData + tValue["tag"] + ','
-            tData = tData + tValue["alias"] + ','
-            tData = tData + tValue["sourceIpAddress"] + ','
-            tData = tData + tValue["destTunnelId"] + ','
-            tData = tData + tValue["udpDestinationPort"] + ','
-            tData = tData + tValue["dscp"] + ','
-            tData = tData + tValue["destNePk"] + ','
-            tData = tData + tValue["srcNePk"] + ','
-            tData = tData + tValue["operStatus"] + ','
-            tData = tData + tValue["adminStatus"] + ','
-            tData = tData + tValue["destIpAddress"] + ','
-            tData = tData + tValue["destTunnelAlias"]
-        except:
-            print("Error")
+        tData = tData + tValue["id"] + ','
+        tData = tData + tValue["dhgroup"] + ','
+        tData = tData + tValue["tag"] + ','
+        tData = tData + tValue["alias"] + ','
+        tData = tData + tValue["sourceIpAddress"] + ','
+        tData = tData + tValue["destTunnelId"] + ','
+        tData = tData + tValue["udpDestinationPort"] + ','
+        tData = tData + tValue["dscp"] + ','
+        tData = tData + tValue["destNePk"] + ','
+        tData = tData + tValue["srcNePk"] + ','
+        tData = tData + tValue["operStatus"] + ','
+        tData = tData + tValue["adminStatus"] + ','
+        tData = tData + tValue["destIpAddress"] + ','
+        tData = tData + tValue["destTunnelAlias"]
         tData = tData + "\n"
         requests.post('https://html-rx-server-cyamato.c9users.io/', data=tData)
 
