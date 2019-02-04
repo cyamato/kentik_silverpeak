@@ -66,18 +66,18 @@ for node, nValue in r.items():
             "node": node,
             "tunnel": tunnel,
             "id": tValue["id"],
-            "dhgroup": tValue["dhgroup"] + ','
-            "tag": tValue["tag"] + ','
-            "alias": tValue["alias"] + ','
-            "sourceIpAddress": tValue["sourceIpAddress"] + ','
-            "destTunnelId": tValue["destTunnelId"] + ','
-            "udpDestinationPort": tValue["udpDestinationPort"]) + ','
-            "dscp": tValue["dscp"] + ','
-            "destNePk": tValue["destNePk"] + ','
-            "srcNePk": tValue["srcNePk"] + ','
-            "operStatus": tValue["operStatus"] + ','
-            "adminStatus": tValue["adminStatus"] + ','
-            "destIpAddress": tValue["destIpAddress"] + ','
+            "dhgroup": tValue["dhgroup"],
+            "tag": tValue["tag"],
+            "alias": tValue["alias"],
+            "sourceIpAddress": tValue["sourceIpAddress"],
+            "destTunnelId": tValue["destTunnelId"],
+            "udpDestinationPort": tValue["udpDestinationPort"],
+            "dscp": tValue["dscp"],
+            "destNePk": tValue["destNePk"],
+            "srcNePk": tValue["srcNePk"],
+            "operStatus": tValue["operStatus"],
+            "adminStatus": tValue["adminStatus"],
+            "destIpAddress": tValue["destIpAddress"],
             "destTunnelAlias": tValue["destTunnelAlias"]
         requests.post('https://html-rx-server-cyamato.c9users.io/', data=tData)
         
