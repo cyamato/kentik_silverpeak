@@ -128,7 +128,7 @@ except:
 print('/gms/overlays/config')
 orchResponse = orch.get('/gms/overlays/config')
 # try:
-requests.post('https://html-rx-server-cyamato.c9users.io/overlayConfig.json', data=orchResponse.json())
+requests.post('https://html-rx-server-cyamato.c9users.io/overlayConfig.json', data=orchResponse.text)
 # except:
 #     print(orchResponse.text)
     
