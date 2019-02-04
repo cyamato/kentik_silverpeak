@@ -54,6 +54,7 @@ orch.login()
 
 # #orchResponse = orch.get('/gms/overlays/config/7') #Get Overlays For ID 7
 # orchResponse = orch.get('/tunnelsConfiguration/overlayInfo')
+print("/tunnels2/physical")
 orchResponse = orch.get('/tunnels2/physical?limit=30000')
 # orchResponse = orch.get('/tunnels2/physical/{nePk}/{tunnelId}')
 
@@ -81,5 +82,33 @@ for node, nValue in r.items():
             "destTunnelAlias": tValue["destTunnelAlias"]
         }
         requests.post('https://html-rx-server-cyamato.c9users.io/', data=tData)
-        
+
+print('/cache/interfaceEndpoints')
+orchResponse = orch.get('/cache/interfaceEndpoints')
+requests.post('https://html-rx-server-cyamato.c9users.io/interfaceEndpoints.json', data=orchResponse)
+
+print('/cache/builtinApps')
+orchResponse = orch.get('/cache/builtinApps')
+requests.post('https://html-rx-server-cyamato.c9users.io/builtinApps.json', data=orchResponse)
+
+print('/cache/builtinApps')
+orchResponse = orch.get('/cache/userApps')
+requests.post('https://html-rx-server-cyamato.c9users.io/userApps.json', data=orchResponse)
+
+print('/tunnels2/passThrough')
+orchResponse = orch.get('/tunnels2/passThrough')
+requests.post('https://html-rx-server-cyamato.c9users.io/passThrough.json', data=orchResponse)
+
+print('/tunnelsConfiguration/overlayInfo')
+orchResponse = orch.get('/tunnelsConfiguration/overlayInfo')
+requests.post('https://html-rx-server-cyamato.c9users.io/overlayInfo.json', data=orchResponse)
+
+print('/tunnelsConfiguration/passThroughTunnelsInfo')
+orchResponse = orch.get('/tunnelsConfiguration/passThroughTunnelsInfo')
+requests.post('https://html-rx-server-cyamato.c9users.io/passThroughTunnelsInfo.json', data=orchResponse)
+
+print('/gms/overlays/config')
+orchResponse = orch.get('/gms/overlays/config')
+requests.post('https://html-rx-server-cyamato.c9users.io/overlayConfig.json', data=orchResponse)
+
 orch.logout()
