@@ -82,12 +82,12 @@ orch.login()
 #         }
 #         requests.post('https://html-rx-server-cyamato.c9users.io/', data=tData)
 
-# print('/cache/interfaceEndpoints')
-# orchResponse = orch.get('/cache/interfaceEndpoints')
-# try:
-#     requests.post('https://html-rx-server-cyamato.c9users.io/interfaceEndpoints.json', data=orchResponse.json())
-# except:
-#     print(orchResponse.text)
+print('/cache/interfaceEndpoints')
+orchResponse = orch.get('/cache/interfaceEndpoints')
+try:
+    requests.post('https://html-rx-server-cyamato.c9users.io/interfaceEndpoints.json', data=orchResponse.json())
+except:
+    print(orchResponse.text)
     
 print('/cache/builtinApps')
 orchResponse = orch.get('/cache/builtinApps')
@@ -127,9 +127,9 @@ except:
     
 print('/gms/overlays/config')
 orchResponse = orch.get('/gms/overlays/config')
-try:
-    requests.post('https://html-rx-server-cyamato.c9users.io/overlayConfig.json', data=orchResponse.json())
-except:
-    print(orchResponse.text)
+# try:
+requests.post('https://html-rx-server-cyamato.c9users.io/overlayConfig.json', data=orchResponse.json())
+# except:
+#     print(orchResponse.text)
     
 orch.logout()
