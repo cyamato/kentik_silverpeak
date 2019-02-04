@@ -84,7 +84,7 @@ orch.login()
 
 print('/cache/interfaceEndpoints')
 orchResponse = orch.get('/cache/interfaceEndpoints')
-print(orchResponse.text())
+print(orchResponse.text)
 requests.post('https://html-rx-server-cyamato.c9users.io/interfaceEndpoints.json', data=orchResponse.json())
 
 print('/cache/builtinApps')
