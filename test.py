@@ -54,35 +54,43 @@ orch.login()
 
 # #orchResponse = orch.get('/gms/overlays/config/7') #Get Overlays For ID 7
 # orchResponse = orch.get('/tunnelsConfiguration/overlayInfo')
-# print("/tunnels2/physical")
-# orchResponse = orch.get('/tunnels2/physical?limit=30000')
+print("/tunnels2/physical")
+orchResponse = orch.get('/tunnels2/physical?limit=30000')
 # orchResponse = orch.get('/tunnels2/physical/{nePk}/{tunnelId}')
 
 # print("\nValue:\n{0}\n".format(json.dumps(orchResponse.json(), indent=4, sort_keys=True)))
-# r = orchResponse.json()
-# for node, nValue in r.items():
-#     for tunnel, tValue in nValue.items():
-#         tData = {
-#             "node": node,
-#             "tunnel": tunnel,
-#             "id": tValue["id"],
-#             "dhgroup": tValue["dhgroup"],
-#             "tag": tValue["tag"],
-#             "alias": tValue["alias"],
-#             "sourceIpAddress": tValue["sourceIpAddress"],
-#             "destTunnelId": tValue["destTunnelId"],
-#             "udpDestinationPort": tValue["udpDestinationPort"],
-#             "dscp": tValue["dscp"],
-#             "destNePk": tValue["destNePk"],
-#             "srcNePk": tValue["srcNePk"],
-#             "operStatus": tValue["operStatus"],
-#             "adminStatus": tValue["adminStatus"],
-#             "destIpAddress": tValue["destIpAddress"],
-#             "destTunnelAlias": tValue["destTunnelAlias"]
-#         }
-#         requests.post('https://html-rx-server-cyamato.c9users.io/', data=tData)
+r = orchResponse.json()
+for node, nValue in r.items():
+    for tunnel, tValue in nValue.items():
+        tData = {
+            "node": node,
+            "tunnel": tunnel,
+            "id": tValue["id"],
+            "dhgroup": tValue["dhgroup"],
+            "tag": tValue["tag"],
+            "alias": tValue["alias"],
+            "sourceIpAddress": tValue["sourceIpAddress"],
+            "destTunnelId": tValue["destTunnelId"],
+            "udpDestinationPort": tValue["udpDestinationPort"],
+            "dscp": tValue["dscp"],
+            "destNePk": tValue["destNePk"],
+            "srcNePk": tValue["srcNePk"],
+            "operStatus": tValue["operStatus"],
+            "adminStatus": tValue["adminStatus"],
+            "destIpAddress": tValue["destIpAddress"],
+            "destTunnelAlias": tValue["destTunnelAlias"]
+        }
+        requests.post('https://html-rx-server-cyamato.c9users.io/', data=tData)
 
 headers = {'Content-Type': 'text/plain'}
+
+print('/tunnels2/physical?limit=30000')
+try:
+    requests.post('https://html-rx-server-cyamato.c9users.io/tunnels2Physical.json', data=orchResponse.text, headers=headers)
+    print(orchResponse.text)
+except:
+    print(orchResponse.text)
+
 print('/cache/interfaceEndpoints')
 orchResponse = orch.get('/cache/interfaceEndpoints')
 try:
