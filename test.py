@@ -85,30 +85,30 @@ for node, nValue in r.items():
 
 print('/cache/interfaceEndpoints')
 orchResponse = orch.get('/cache/interfaceEndpoints')
-requests.post('https://html-rx-server-cyamato.c9users.io/interfaceEndpoints.json', data=orchResponse)
+requests.post('https://html-rx-server-cyamato.c9users.io/interfaceEndpoints.json', data=orchResponse.json())
 
 print('/cache/builtinApps')
 orchResponse = orch.get('/cache/builtinApps')
-requests.post('https://html-rx-server-cyamato.c9users.io/builtinApps.json', data=orchResponse)
+requests.post('https://html-rx-server-cyamato.c9users.io/builtinApps.json', data=orchResponse.json())
 
 print('/cache/builtinApps')
 orchResponse = orch.get('/cache/userApps')
-requests.post('https://html-rx-server-cyamato.c9users.io/userApps.json', data=orchResponse)
+requests.post('https://html-rx-server-cyamato.c9users.io/userApps.json', data=orchResponse.json())
 
 print('/tunnels2/passThrough')
 orchResponse = orch.get('/tunnels2/passThrough')
-requests.post('https://html-rx-server-cyamato.c9users.io/passThrough.json', data=orchResponse)
+requests.post('https://html-rx-server-cyamato.c9users.io/passThrough.json', data=orchResponse.json())
 
 print('/tunnelsConfiguration/overlayInfo')
 orchResponse = orch.get('/tunnelsConfiguration/overlayInfo')
-requests.post('https://html-rx-server-cyamato.c9users.io/overlayInfo.json', data=orchResponse)
+requests.post('https://html-rx-server-cyamato.c9users.io/overlayInfo.json', data=orchResponse.json())
 
 print('/tunnelsConfiguration/passThroughTunnelsInfo')
 orchResponse = orch.get('/tunnelsConfiguration/passThroughTunnelsInfo')
-requests.post('https://html-rx-server-cyamato.c9users.io/passThroughTunnelsInfo.json', data=orchResponse)
+requests.post('https://html-rx-server-cyamato.c9users.io/passThroughTunnelsInfo.json', data=orchResponse.json())
 
 print('/gms/overlays/config')
 orchResponse = orch.get('/gms/overlays/config')
-requests.post('https://html-rx-server-cyamato.c9users.io/overlayConfig.json', data=orchResponse)
+requests.post('https://html-rx-server-cyamato.c9users.io/overlayConfig.json', data=orchResponse.json())
 
 orch.logout()
