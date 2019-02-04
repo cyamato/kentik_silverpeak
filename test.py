@@ -85,51 +85,50 @@ orch.login()
 print('/cache/interfaceEndpoints')
 orchResponse = orch.get('/cache/interfaceEndpoints')
 try:
-    requests.post('https://html-rx-server-cyamato.c9users.io/interfaceEndpoints.json', data=orchResponse.json())
+    requests.post('https://html-rx-server-cyamato.c9users.io/interfaceEndpoints.json', data=orchResponse.text)
 except:
     print(orchResponse.text)
     
 print('/cache/builtinApps')
 orchResponse = orch.get('/cache/builtinApps')
 try:
-    requests.post('https://html-rx-server-cyamato.c9users.io/builtinApps.json', data=orchResponse.json())
-    print(orchResponse.json())
+    requests.post('https://html-rx-server-cyamato.c9users.io/builtinApps.json', data=orchResponse.text)
 except:
     print(orchResponse.text)
     
 print('/cache/builtinApps')
 orchResponse = orch.get('/cache/userApps')
 try:
-    requests.post('https://html-rx-server-cyamato.c9users.io/userApps.json', data=orchResponse.json())
+    requests.post('https://html-rx-server-cyamato.c9users.io/userApps.json', data=orchResponse.text)
 except:
     print(orchResponse.text)
     
 print('/tunnels2/passThrough')
 orchResponse = orch.get('/tunnels2/passThrough')
 try:
-    requests.post('https://html-rx-server-cyamato.c9users.io/passThrough.json', data=orchResponse.json())
+    requests.post('https://html-rx-server-cyamato.c9users.io/passThrough.json', data=orchResponse.text)
 except:
     print(orchResponse.text)
     
 print('/tunnelsConfiguration/overlayInfo')
 orchResponse = orch.get('/tunnelsConfiguration/overlayInfo')
 try:
-    requests.post('https://html-rx-server-cyamato.c9users.io/overlayInfo.json', data=orchResponse.json())
+    requests.post('https://html-rx-server-cyamato.c9users.io/overlayInfo.json', data=orchResponse.text)
 except:
     print(orchResponse.text)
     
 print('/tunnelsConfiguration/passThroughTunnelsInfo')
 orchResponse = orch.get('/tunnelsConfiguration/passThroughTunnelsInfo')
 try:
-    requests.post('https://html-rx-server-cyamato.c9users.io/passThroughTunnelsInfo.json', data=orchResponse.json())
+    requests.post('https://html-rx-server-cyamato.c9users.io/passThroughTunnelsInfo.json', data=orchResponse.text)
 except:
     print(orchResponse.text)
     
 print('/gms/overlays/config')
 orchResponse = orch.get('/gms/overlays/config')
-# try:
-requests.post('https://html-rx-server-cyamato.c9users.io/overlayConfig.json', data=orchResponse.text)
-# except:
-#     print(orchResponse.text)
+try:
+    requests.post('https://html-rx-server-cyamato.c9users.io/overlayConfig.json', data=orchResponse.text)
+except:
+    print(orchResponse.text)
     
 orch.logout()
