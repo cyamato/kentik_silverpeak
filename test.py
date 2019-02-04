@@ -79,6 +79,7 @@ for node, nValue in r.items():
             "adminStatus": tValue["adminStatus"],
             "destIpAddress": tValue["destIpAddress"],
             "destTunnelAlias": tValue["destTunnelAlias"]
+        }
         requests.post('https://html-rx-server-cyamato.c9users.io/', data=tData)
         
 orch.logout()
