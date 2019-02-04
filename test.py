@@ -83,7 +83,7 @@ orch.login()
 #         requests.post('https://html-rx-server-cyamato.c9users.io/', data=tData)
 
 print('/cache/interfaceEndpoints')
-orchResponse = orch.get('/cache/interfaceEndpoints'
+orchResponse = orch.get('/cache/interfaceEndpoints')
 try:
     requests.post('https://html-rx-server-cyamato.c9users.io/interfaceEndpoints.json', data=orchResponse.json())
 except:
